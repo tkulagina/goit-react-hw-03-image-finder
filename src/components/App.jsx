@@ -89,10 +89,14 @@ export class App extends Component {
         {showModal && (
           <Modal toggleModal={toggleModal} largeImage={largeImage} />
         )}
-        {isLoading && <Loader />}
+         {isLoading && <Loader />}
+
+        {!isLoading && images.length > 0 && <Button nextPage={nextPage} />}
         <ToastContainer autoClose={2500} />
-        {images.length >= 12 && <Button nextPage={nextPage} />}
+        
+        
       </div>
     );
   }
 }
+
